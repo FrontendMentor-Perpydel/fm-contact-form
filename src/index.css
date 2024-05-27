@@ -10,4 +10,6 @@
 
 body {
     font-family: "Karla", sans-serif;
+    background-color: hsl(148, 38%, 91%);
+    min-height: 100vh;
 }
