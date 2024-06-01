@@ -111,13 +111,13 @@ const FormComponent = () => {
   }
 
   return (
-    <div className="bg-primary w-[50%] rounded-xl p-6 mb-10">
+    <div className="bg-primary sm:w-[90%] lg:w-[50%] rounded-xl p-6 mb-10">
       <h1 className="font-bold text-xl text-neutral pb-6">Contact Us</h1>
 
       {/* Form */}
       <form className="text-neutral" onSubmit={handleSubmitForm}>
         {/* Name Section */}
-        <section className="flex gap-5 pb-5">
+        <section className="flex sm:flex-col md:flex-row gap-5 pb-5">
           {/* First Name */}
           <div className="flex flex-col w-full">
             <label htmlFor="firstName" className="pb-1 font-medium">
@@ -196,7 +196,7 @@ const FormComponent = () => {
 
         {/* Query */}
         <h3 className="pb-1 font-medium">Query Type *</h3>
-        <section className="flex gap-5 pb-2">
+        <section className="flex sm:flex-col md:flex-row gap-5 pb-2">
           <div className={`flex gap-2 pl-4 items-center p-2 border border-accent rounded-md w-full ${queryType === 'generalEnquiry' ? "bg-secondary/10" : ""}`}>
             <input
               type="radio"
