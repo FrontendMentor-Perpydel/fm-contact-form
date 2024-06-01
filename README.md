@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./public/contact-form-ss.png)
+![Contact form](./public/contact-form-ss.png)
 
 ### Links
 
