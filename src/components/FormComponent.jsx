@@ -71,6 +71,10 @@ const FormComponent = () => {
       errors.email = 'Email is invalid';
       valid = false;
     }
+    if (!queryType) {
+      errors.queryType = 'Please select a query type';
+      valid = false;
+    }
     if (!message) {
       errors.message = 'Message is required';
       valid = false;
@@ -107,7 +111,7 @@ const FormComponent = () => {
   }
 
   return (
-    <div className="bg-primary w-[50%] rounded-xl p-6">
+    <div className="bg-primary w-[50%] rounded-xl p-6 mb-10">
       <h1 className="font-bold text-xl text-neutral pb-6">Contact Us</h1>
 
       {/* Form */}
@@ -130,7 +134,7 @@ const FormComponent = () => {
                   value: e.target.value,
                 })
               }
-              className="bg-primary border border-accent rounded-md p-2"
+              className={`bg-primary ${errorMessage.firstName ? "border border-error" : "border border-accent"} rounded-md p-2`}
             />
             {errorMessage.firstName && (
               <span className="label-text-alt text-error pt-2">
@@ -155,7 +159,7 @@ const FormComponent = () => {
                   value: e.target.value,
                 })
               }
-              className="bg-primary border border-accent rounded-md p-2"
+              className={`bg-primary ${errorMessage.firstName ? "border border-error" : "border border-accent"} rounded-md p-2`}
             />
             {errorMessage.lastName && (
               <span className="label-text-alt text-error pt-2">
@@ -181,7 +185,7 @@ const FormComponent = () => {
                 value: e.target.value,
               })
             }
-            className="bg-primary border border-accent rounded-md p-2"
+            className={`bg-primary ${errorMessage.firstName ? "border border-error" : "border border-accent"} rounded-md p-2`}
           />
           {errorMessage.email && (
             <span className="label-text-alt text-error pt-2">
@@ -193,7 +197,7 @@ const FormComponent = () => {
         {/* Query */}
         <h3 className="pb-1 font-medium">Query Type *</h3>
         <section className="flex gap-5 pb-2">
-          <div className="flex gap-2 pl-4 items-center p-2 border border-accent rounded-md w-full ">
+          <div className={`flex gap-2 pl-4 items-center p-2 border border-accent rounded-md w-full ${queryType === 'generalEnquiry' ? "bg-secondary/10" : ""}`}>
             <input
               type="radio"
               id="general-enquiry"
@@ -211,7 +215,7 @@ const FormComponent = () => {
             />
             <label htmlFor="general-enquiry">General Enquiry</label>
           </div>
-          <div className="flex gap-2 pl-4 items-center p-2 border border-accent rounded-md w-full">
+          <div className={`flex gap-2 pl-4 items-center p-2 border border-accent rounded-md w-full ${queryType === 'supportRequest' ? "bg-secondary/10" : ""}`}>
             <input
               type="radio"
               id="support-request"
@@ -244,7 +248,7 @@ const FormComponent = () => {
           <textarea
             name="message"
             id="message"
-            className="bg-primary border border-accent rounded-md p-2"
+            className={`bg-primary ${errorMessage.firstName ? "border border-error" : "border border-accent"} rounded-md p-2`}
             rows={3}
             value={message}
             onChange={e =>

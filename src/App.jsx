@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <ThemeController />
-      <div className='flex w-full justify-center items-center h-[80vh]'>
+      <div className='flex w-full justify-center items-center'>
         <FormComponent />
       </div>
     </div>
